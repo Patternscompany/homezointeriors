@@ -329,67 +329,52 @@
     <p style="color: #fff; margin-bottom: 20px;">
       Fill out the form below to download our brochure and learn more about our services.
     </p>
+  <!-- Professional Form -->
+<form id="brochureForm" action="homezo-interiors-brochure.php" method="POST" style="margin-bottom: 20px;">
+  <input 
+    type="text" 
+    name="name"
+    placeholder="Your Name" 
+    required 
+    style="width: 85%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px;" 
+  />
+  <input 
+    type="email" 
+    name="email"
+    placeholder="Your Email" 
+    required 
+    style="width: 85%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px;" 
+  />
+  <input 
+    type="tel" 
+    name="mobile"
+    placeholder="Your Mobile Number" 
+    required 
+    pattern="\d{10}"
+    style="width: 85%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px;" 
+  />
+  
+  <input  type="submit" id="downloadBtn" class="thm-btn"  value="DOWNLOAD BROCHURE"/>
+<!-- Download Button -->
+<!--<div class="btn-box">-->
+<!--  <a id="downloadBtn" class="thm-btn" >-->
+<!--    <span class="txt">DOWNLOAD BROCHURE</span>-->
+<!--  </a>-->
+<!--</div>-->
+</form>
 
-    <!-- Professional Form -->
-    <form id="brochureForm" oninput="validateForm()" style="margin-bottom: 20px;">
-      <input 
-        type="text" 
-        id="name" 
-        placeholder="Your Name" 
-        required 
-        style="width: 85%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px;" 
-      />
-      <input 
-        type="email" 
-        id="email" 
-        placeholder="Your Email" 
-        required 
-        style="width: 85%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px;" 
-      />
-      <input 
-        type="tel" 
-        id="mobile" 
-        placeholder="Your Mobile Number" 
-        required 
-        style="width: 85%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px;" 
-      />
-    </form>
 
-    <!-- Download button -->
-    <div class="btn-box">
-      <a id="downloadBtn" class="thm-btn" href="./assets/brochure/Company Profile Presentation.pdf" download="Company-Brochure.pdf">
-  <span class="txt">DOWNLOAD BROCHURE</span>
-</a>
-    </div>
+
   </div>
 </div>
 
-<script>
-  function validateForm() {
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const mobile = document.getElementById("mobile").value.trim();
-    const downloadBtn = document.getElementById("downloadBtn");
-
-    // Updated patterns
-    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-    const mobilePattern = /^\d{10}$/;
-
-    if (name !== "" && emailPattern.test(email) && mobilePattern.test(mobile)) {
-      downloadBtn.href = "assets/brochure/Dm proposal";
-      downloadBtn.setAttribute("download", "brochure.pdf");
-      downloadBtn.style.pointerEvents = "auto";
-      downloadBtn.style.opacity = "1";
-      downloadBtn.onclick = null;
-    } else {
-      downloadBtn.href = "#";
-      downloadBtn.removeAttribute("download");
-      downloadBtn.style.pointerEvents = "none";
-      downloadBtn.style.opacity = "0.6";
-      downloadBtn.onclick = () => false;
+<style>
+    #downloadBtn{
+        background-color:#DAA520;
     }
-  }
-</script>
+    
+</style>
+
 
                     <!--End Sidebar Single-->
 
